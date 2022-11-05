@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 .idea/*
 .idea
+Admin-Panel.pem
+Amazon.ppk
