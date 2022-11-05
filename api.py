@@ -1,4 +1,4 @@
-BASE_URL = 'http://127.0.0.1:8000'
+BASE_URL = 'https://behzodbot.pythonanywhere.com'
 import requests
 import json
 def create_user(full_name,telegram_id):
