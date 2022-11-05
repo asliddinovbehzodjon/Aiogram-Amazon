@@ -9,3 +9,12 @@ def change(id,lang):
     url = f"{BASE_URL}/change/{id}/{lang}/"
     requests.get(url)
     return 'Ok'
+def get_image():
+    url = f"{BASE_URL}/image/"
+    response = requests.get(url)
+    data = json.loads(response.text)
+    images = [i['image'] for i in data]
+    return images
+
+
+

@@ -1,6 +1,6 @@
 from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandStart,CallbackQuery
-from api import create_user,change
+from api import create_user,change,get_image
 from loader import dp
 from aiogram.dispatcher.filters import Text
 from keyboards.inline.button import btn
@@ -20,3 +20,8 @@ async def get_language(call:CallbackQuery):
     else:
         await call.message.answer("Language changed")
     await call.message.delete()
+@dp.message_handler(commands='image')
+async def image(message:types.Message):
+    images = get_image()
+    for image in images:
+        await message.answer_photo(photo=image)
